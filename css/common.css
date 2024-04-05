@@ -1,0 +1,294 @@
+@charset "UTF-8";
+
+body {
+  --title1: 100px;
+  --title2: 80px;
+  --title: 70px;
+
+  --nav1: 22px;
+  --nav2: 18px;
+
+  --content1: 20px;
+  --content2: 22px;
+  --content3: 24px;
+  --content3: 28px;
+
+  --color1: #37250f;
+  --color2: #efe5cc;
+}
+
+body,
+input,
+textarea {
+  font-family: "SpoqaHanSansNeo-Regular", "나눔고딕", "맑은 고딕",
+    "Malgun Gothic", "Apple SD Gothic Neo", 돋움, Dotum, sans-serif;
+}
+
+.centerbox1600 {
+  max-width: 1600px;
+  margin: 0 auto;
+}
+
+html {
+  font-size: 16px;
+}
+
+/* pc */
+.pc {
+  display: block;
+}
+.mo {
+  display: none;
+}
+
+body.on {
+  height: 100%;
+  overflow: hidden;
+}
+
+/* header */
+header {
+  /* vw , em, % 
+  알고싶은크기/기존크기*100 */
+  /* height: 5.2vw;  */
+  background: url(../images/bg.png);
+  border-bottom: 1px solid #efe5cc;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+}
+header .centerbox1600 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 100%;
+}
+header .centerbox1600 .gnb {
+  display: flex;
+  font-family: "SpoqaHanSansNeo-Light";
+}
+header .centerbox1600 .gnb li {
+  /* font-size: 18px; */
+  font-size: 1.12rem;
+  margin: 2em 0;
+  white-space: nowrap;
+}
+header .centerbox1600 .gnb li a {
+  color: #fff;
+  /* padding: 20px 40px; */
+  padding: 1em 1.85em;
+}
+
+header .hambuger {
+  position: absolute;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  right: 20px;
+  z-index: 22;
+}
+header .hambuger span {
+  position: absolute;
+  width: 20px;
+  height: 2px;
+  background: #fff;
+  left: 5px;
+  top: 14px;
+}
+header .hambuger span::before,
+header .hambuger span::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+}
+header .hambuger span::before {
+  top: -6px;
+}
+header .hambuger span::after {
+  top: 6px;
+  width: 10px;
+  transition: 0.3s;
+}
+header .hambuger.on span {
+  background: rgba(0, 0, 0, 0);
+}
+header .hambuger.on span:before {
+  transform: rotate(45deg);
+  background: #fff;
+  top: 0;
+}
+header .hambuger.on span:after {
+  transform: rotate(135deg);
+  background: #fff;
+  top: 0;
+  width: 20px;
+}
+
+header .nav_box {
+  position: absolute;
+  width: 100%;
+  height: 600px;
+  background: rgba(55, 37, 15, 0.5);
+  top: 95px;
+  left: 0;
+  backdrop-filter: blur(15px);
+  display: none;
+  padding-top: 90px;
+}
+header .menu_box {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+header .menu_box .menu {
+  display: flex;
+}
+header .menu_box .menu > li {
+  font-size: 24px;
+  /* font-size: 1.2rem; */
+  font-weight: bold;
+  position: relative;
+}
+header .menu_box .menu > li > a {
+  color: #fff;
+  padding: 30px 50px;
+  /* padding: 1.25em 2.5em; */
+  display: block;
+}
+
+header .menu_box .menu > li .submenu {
+  position: absolute;
+  width: 100%;
+}
+header .menu_box .menu > li .submenu li {
+  font-size: 18px;
+  font-weight: normal;
+  text-align: center;
+  line-height: 3;
+  border-radius: 2px;
+  transition: 0.1s;
+}
+header .menu_box .menu > li .submenu li:hover {
+  background: #37250f;
+}
+header .menu_box .menu > li .submenu li a {
+  color: #fff;
+  display: block;
+}
+
+/* subpage */
+#section_sub {
+  background: url(../images/Group\ 43.png);
+  background-size: cover;
+}
+
+#visual_sub {
+  height: 400px;
+  background: url(../images/sub_visual.png) center top;
+  background-size: cover;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+#visual_sub .text {
+  color: #fff;
+  text-align: center;
+}
+#visual_sub strong {
+  font-size: 48px;
+  margin-bottom: 15px;
+  display: block;
+  color: #37250f;
+}
+#visual_sub p {
+  font-size: 16px;
+  color: #37250f;
+}
+
+.snb_box {
+  max-width: 1320px;
+  height: 4.75em;
+  margin: 0 auto;
+  background: #37250f;
+  transform: translateY(-50%);
+}
+.snb_box .snb {
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.snb_box .snb li {
+  height: 100%;
+}
+.snb_box .snb li a {
+  color: #fff;
+  display: block;
+  height: 100%;
+  font-size: 20px;
+  padding: 0 2vw;
+  display: flex;
+  align-items: center;
+  white-space: nowrap;
+}
+.snb_box .snb li.active a span {
+  border-bottom: 1px solid #fff;
+}
+
+/* 왼쪽 사이드 바 */
+.main_position_bar {
+  position: fixed;
+  width: 3px;
+  height: 250px;
+  background: #37250f;
+  z-index: 777;
+  left: 50px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.main_position_bar span {
+  display: block;
+  height: 25%;
+  width: 4px;
+  margin-left: -1px;
+  background: #efe5cc;
+  position: absolute;
+  top: 0;
+  transition: 0.5s;
+}
+
+/* .main_position_bar a {
+    display: block;
+    height: 25%;
+    width: 4px;
+    margin-left: -1px;
+  }
+  .main_position_bar a.active {
+    background: #EFE5CC;
+  } */
+
+.go_top {
+  position: fixed;
+  right: 30px;
+  bottom: 50px;
+  background: #efe5cc;
+  color: #37250f;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 60px;
+  height: 60px;
+  border-radius: 60px;
+  z-index: 100;
+  opacity: 1;
+  visibility: visible;
+  /* opacity: 0;
+    visibility: hidden; */
+  transition: 0.5s;
+}
